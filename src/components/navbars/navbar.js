@@ -83,11 +83,13 @@ export default function NavBar() {
           </div>
         </ul>
         <div className="space-x-4 hidden md:inline lg:inline">
-          <Link href="/orgprompt">
-            <span className="text-[#EC0B5C] font-bold text-md p-2 min-w-[90px] rounded-md">
-              Organizations
-            </span>
-          </Link>
+          {process.env.NEXT_PUBLIC_ORGS_REQUIRED == 'false' && (
+            <Link href="/orgprompt">
+              <span className="text-[#EC0B5C] font-bold text-md p-2 min-w-[90px] rounded-md">
+                Organizations
+              </span>
+            </Link>
+          )}
 
           <Link href="/api/auth/login?returnTo=/home">
             <span className="text-[#EC0B5C] font-bold text-md p-2 min-w-[90px] rounded-md">

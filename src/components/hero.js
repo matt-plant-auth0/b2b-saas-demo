@@ -16,7 +16,7 @@ export default function Hero() {
           <div className="mb-8">
             <h1 className="text-2xl font-bold leading-snug tracking-tight text-gray-800 lg:text-2xl lg:leading-tight xl:text-4xl xl:leading-tight">
               <p>
-                The next era of business thrives on
+                The next era of business thrives on 
                 <span className="text-[#EC0B5C]"> learning</span>
               </p>
             </h1>

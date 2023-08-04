@@ -45,7 +45,7 @@ export default function Business() {
       <main className="bg-white p-4 ">
         <div className="mx-auto max-w-7xl bg-white px-4 pt-24 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-black sm:text-5xl sm:leading-tight sm:tracking-tight">
-            Sign in to your organization
+            Lookup your organization
           </h2>
           <p className="mt-4 max-2-3xl text-lg text-[#EC0B5C] font-bold p-2 min-w-[90px] rounded-md">
             {message}

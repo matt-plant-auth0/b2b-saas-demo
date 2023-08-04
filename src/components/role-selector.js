@@ -17,11 +17,13 @@ export default function RoleSelector({
     return (
       <>
         <table className="w-full">
-          {selected?.map((role, index) => (
-            <tr key={index}>
-              <td>{role.label}</td>
-            </tr>
-          ))}
+          <tbody>
+            {selected?.map((role, index) => (
+              <tr key={index}>
+                <td>{role.label}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </>
     );

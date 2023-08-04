@@ -57,7 +57,11 @@ export default withApiAuthRequired(async function organization(req, res) {
 
     const startDate = new Date();
     let endDate = new Date();
-    endDate.setFullYear(startDate.getFullYear() + 1);
+    if(session.user.subscription_plan == 'trial'){
+      endDate.setDate(startDate.getDate() + 21);
+    }else{
+      endDate.setFullYear(startDate.getFullYear() + 1);
+    }
 
     const app_metadata = {
       subscription_plan: session.user.subscription_plan,

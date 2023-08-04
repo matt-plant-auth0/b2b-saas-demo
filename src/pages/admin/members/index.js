@@ -337,7 +337,7 @@ export default function Members({ members, invites, allRoles }) {
             <tbody className="divide-y divide-gray-100 border-t border-gray-100">
               {viewMembers.map(
                 ({ picture, name, email, user_id, roles, viewMode }) => (
-                  <>
+                  
                     <tr className="hover:bg-gray-50" key={user_id}>
                       <td className="flex gap-3 px-6 py-4 font-normal text-gray-900">
                         <div className="relative h-10 w-10">
@@ -385,7 +385,7 @@ export default function Members({ members, invites, allRoles }) {
                         </div>
                       </td>
                     </tr>
-                  </>
+                  
                 )
               )}
             </tbody>

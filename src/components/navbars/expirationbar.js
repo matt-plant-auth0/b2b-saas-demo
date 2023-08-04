@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function ExpirationBar({
-  remaining_days = 1,
+  remaining_days = 21,
   subscription_plan = "trial",
 }) {
   const hasExpired = Boolean(remaining_days <= 0);

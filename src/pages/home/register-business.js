@@ -1,13 +1,19 @@
 import HomeLayout from "@/components/layouts/home-layout";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function RegisterBusiness({ user }) {
   const [organization, setOrganization] = useState("");
   const [message, setMessage] = useState("");
+  const [brandName, setBrandName] = useState("");
 
   const router = useRouter();
   const { plan } = router.query;
+  
+  useEffect(() => {
+    setBrandName(process.env.NEXT_PUBLIC_BRAND_NAME);
+  }, [])
+
 
   const createBusinessAccount = async (event) => {
     event.preventDefault();
@@ -54,7 +60,7 @@ export default function RegisterBusiness({ user }) {
           </div>
           <p>
             Choose a unique name for your organization. All users of your
-            organization will use this identifier to sign-in to your business
+            organization can use this identifier to sign-in to your business
             account
           </p>
 
@@ -76,7 +82,7 @@ export default function RegisterBusiness({ user }) {
                 className="flex items-center whitespace-nowrap bg-transparent rounded-md outline-none focus:outline-none px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] "
                 id="basic-addon2"
               >
-                .mylearning.app
+                .{brandName.toLowerCase().replace(/ /g, '')}.app
               </span>
             </div>
             <button
@@ -96,5 +102,5 @@ RegisterBusiness.getLayout = function (page) {
   return <HomeLayout>{page}</HomeLayout>;
 };
 
-import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { Session, withPageAuthRequired } from "@auth0/nextjs-auth0";
 export const getServerSideProps = withPageAuthRequired();

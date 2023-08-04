@@ -1,4 +1,3 @@
-// pages/api/auth/[...auth0].js
 import { handleAuth, handleLogin } from "@auth0/nextjs-auth0";
 
 export default handleAuth({
@@ -8,7 +7,7 @@ export default handleAuth({
         authorizationParams: {
           screen_hint: "signup",
         },
-        returnTo: "/home",
+        returnTo: process.env.NEXT_PUBLIC_ORGS_REQUIRED === 'true' ? "/home/register-business?plan=Trial" : "/home",
       });
     } catch (error) {
       console.error(error);
